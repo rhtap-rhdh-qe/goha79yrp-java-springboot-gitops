@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: goha79yrp-java-springboot-gitops
+  description: This is GitOps manifest for goha79yrp-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=goha79yrp-java-springboot
+    backstage.io/kubernetes-id: goha79yrp-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: goha79yrp-java-springboot   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:goha79yrp-java-springboot
